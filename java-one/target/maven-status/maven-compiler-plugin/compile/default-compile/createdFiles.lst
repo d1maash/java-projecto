@@ -1,0 +1,8 @@
+com/durak/game/DurakGame.class
+com/durak/model/Card.class
+com/durak/model/Card$Rank.class
+com/fps/Camera.class
+com/durak/model/Player.class
+com/durak/ui/GameWindow.class
+com/durak/model/Card$Suit.class
+com/durak/model/Deck.class
