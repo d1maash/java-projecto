@@ -165,3 +165,8 @@ takeCardsButton.addActionListener(e -> {
 2. Только один уровень сложности ИИ
 3. Отсутствие сохранения состояния игры
 4. Отсутствие настроек интерфейса 
+
+
+```
+mvn clean package && java -jar target/durak-game-1.0-SNAPSHOT.jar
+```

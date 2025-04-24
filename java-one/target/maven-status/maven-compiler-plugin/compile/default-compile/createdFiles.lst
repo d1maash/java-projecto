@@ -4,5 +4,6 @@ com/durak/model/Card$Rank.class
 com/fps/Camera.class
 com/durak/model/Player.class
 com/durak/ui/GameWindow.class
+com/durak/ui/GameWindow$1.class
 com/durak/model/Card$Suit.class
 com/durak/model/Deck.class

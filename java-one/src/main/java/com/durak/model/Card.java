@@ -19,8 +19,15 @@ public class Card {
     }
 
     public enum Rank {
-        SIX(6), SEVEN(7), EIGHT(8), NINE(9), TEN(10),
-        JACK(11), QUEEN(12), KING(13), ACE(14);
+        SIX(6),
+        SEVEN(7),
+        EIGHT(8),
+        NINE(9),
+        TEN(10),
+        JACK(11),
+        QUEEN(12),
+        KING(13),
+        ACE(14);
 
         private final int value;
 
@@ -30,6 +37,22 @@ public class Card {
 
         public int getValue() {
             return value;
+        }
+
+        @Override
+        public String toString() {
+            switch (this) {
+                case JACK:
+                    return "J";
+                case QUEEN:
+                    return "Q";
+                case KING:
+                    return "K";
+                case ACE:
+                    return "A";
+                default:
+                    return String.valueOf(value);
+            }
         }
     }
 
@@ -50,10 +73,25 @@ public class Card {
     }
 
     public boolean canBeat(Card other, Suit trump) {
-        if (suit == other.suit) {
-            return rank.getValue() > other.rank.getValue();
+        if (this.suit == other.suit) {
+            return this.rank.getValue() > other.rank.getValue();
         }
-        return suit == trump && other.suit != trump;
+        return this.suit == trump && other.suit != trump;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Card card = (Card) o;
+        return suit == card.suit && rank == card.rank;
+    }
+
+    @Override
+    public int hashCode() {
+        return 31 * suit.hashCode() + rank.hashCode();
     }
 
     @Override
